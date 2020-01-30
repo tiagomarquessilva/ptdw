@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <title>API</title>
+</head>
+<body>
+    <div id="rendered" class="markdown-body"><h1>API</h1>
+        <h2>Enviar Alerta</h2>
+        <p><strong>URL</strong></p>
+        <ul>
+        <li>/api/send_alert</li>
+        </ul>
+        <p><strong>Metodo</strong></p>
+        <ul>
+        <li>POST</li>
+        </ul>
+        <p><strong>Parametros</strong></p>
+        <table>
+        <thead>
+        <tr><th>Key</th><th>Data Type</th><th>Formato</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>access_token</td><td>string</td><td>20 chars</td></tr>
+        <tr><td>date</td><td>string</td><td>Y-M-dTh:mZ</td></tr>
+        <tr><td>type_id</td><td>integer</td><td>1 = chamada; 2 = emergência</td></tr>
+        <tr><td>message_id</td><td>integer</td><td>1 = chamada; 2 = emergência</td></tr>
+        </tbody>
+        </table>
+        <p><strong>Retorno</strong></p>
+        <table>
+        <thead>
+        <tr><th>Resultado</th><th>JSON</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>Inserido c/ sucesso</td><td>{"success":true,"insertion_error":false,"validation_errors":{}}</td></tr>
+        <tr><td>Inserido s/ sucesso, erro de BD</td><td>{"success":false,"insertion_error":true,"validation_errors":{}}</td></tr>
+        <tr><td>Inserido s/ sucesso, erro de validação</td><td>{"success":false,"insertion_error":false,"validation_errors":{"PARAM":["ERROR1", "ERROR2"]}}</td></tr>
+        </tbody>
+        </table>
+        <h2>Enviar Valores</h2>
+        <p><strong>URL</strong></p>
+        <ul>
+        <li>/api/registar_dados</li>
+        </ul>
+        <p><strong>Metodo</strong></p>
+        <ul>
+        <li>POST</li>
+        </ul>
+        <p><strong>Parametros</strong></p>
+        <table>
+        <thead>
+        <tr><th>Key</th><th>Data Type</th><th>Formato</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>access_token</td><td>string</td><td>20 chars</td></tr>
+        <tr><td>emg</td><td>double</td><td></td></tr>
+        <tr><td>bc</td><td>int</td><td></td></tr>
+        </tbody>
+        </table>
+        <p><strong>Retorno</strong></p>
+        <p>Sem Retorno.</p>
+        <h2>Obter Configuracao</h2>
+        <p><strong>URL</strong></p>
+        <ul>
+        <li>/api/obter_configuracao</li>
+        </ul>
+        <p><strong>Metodo</strong></p>
+        <ul>
+        <li>POST</li>
+        </ul>
+        <p><strong>Parametros</strong></p>
+        <table>
+        <thead>
+        <tr><th>Key</th><th>Data Type</th><th>Formato</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>access_token</td><td>string</td><td>20 chars</td></tr>
+        </tbody>
+        </table>
+        <p><strong>Retorno</strong></p>
+        <table>
+        <thead>
+        <tr><th>Resultado</th><th>JSON</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>Obtido c/ sucesso</td><td>{"emg_min":VALUE,"emg_max":VALUE,"bpm_min":VALUE,"bpm_max":VALUE}</td></tr>
+        <tr><td>Obtido s/ sucesso, erro ou configurações não existem</td><td>{erro:'sem dados de calibração'}</td></tr>
+        </tbody>
+        </table>
+        </div>
+</body>
+</html>
