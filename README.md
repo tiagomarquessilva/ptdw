@@ -23,8 +23,17 @@ Uma descrição mais detalhada dos requisitos pode ser encontrada na Documentaç
 ## Instalação
 
 1. Importar a [base de dados](database.sql) para o PostgreSQL;
-1. Importar a [aplicação](app) para um webserver;
-1. Inserir as credenciais de acesso à BD no [ficheiro de conexão](app/php/db_connection.php).
+1. Inserir as credenciais de acesso à BD no [.env](app/.env);
+1. Executar os comandos
+...```composer install
+php artisan key:generate
+chmod -R ug+rwx storage bootstrap/cache
+chown -R www-data:www-data vendor/
+chmod -R 775 ./
+chmod -R 777 storage/
+chmod -R 777 bootstrap/
+php artisan db:seed
+php artisan serve```
 
 ## Documentação
 
