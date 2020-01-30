@@ -29,7 +29,6 @@ Uma descrição mais detalhada dos requisitos pode ser encontrada na Documentaç
 ## Documentação
 
 - [Relatório](Relatorio.pdf);
-- [Enunciado](Enunciado.pdf).
 
 ## Autores
 
