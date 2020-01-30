@@ -40,6 +40,7 @@ php artisan serve
 ## Documentação
 
 - [Relatório](Relatorio.pdf);
+- [API](api.html);
 
 ## Autores
 
